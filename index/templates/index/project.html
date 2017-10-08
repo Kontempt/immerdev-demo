@@ -1,0 +1,31 @@
+{% extends 'index/index.html' %}
+
+{% block title %}
+{{portfolio.project_title}} | immerDEV
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block body %}
+
+<div class="project_header">
+    <h4 class="project-title"> {{ portfolio.project_title }} </h4>
+</div>
+
+<div class="container">
+    <div class="row project-details">
+        <div class="col-md-8">
+            <div class="container-fluid">
+                <img src=" {{ portfolio.project_cover_pic.url }}" style="width:100%;" class="project-pc">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p class="client-name"> Client: {{ portfolio.client }} </p><hr>
+            <p class="category"> Category: {{ portfolio.project_type }}<hr>
+            <p class="project-desc"> {{portfolio.project_description}}</p><hr>
+            <p><a href="{{portfolio.project_link }}">Visit Website</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

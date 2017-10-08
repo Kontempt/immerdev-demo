@@ -1,0 +1,86 @@
+{% extends 'index/index.html' %}
+
+{% load staticfiles %}
+{% block body %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">hey there!</h1>
+            <p>
+            </p>
+        </div>
+    </div>
+      
+    <div class="container">
+        <section class="about-us">
+            <h2 class="about-title">who are we?</h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Eligendi similique culpa molestiae vero quos earum molestias eos eius consequuntur debitis omnis nemo deserunt doloremque nulla, 
+            ipsum tenetur, inventore ipsam, officia reprehenderit distinctio voluptates voluptatem? Adipisci, nemo. 
+            Corrupti officia quis id nulla voluptatibus officiis facilis? Architecto quis accusantium mollitia nulla delectus animi 
+            reprehenderit voluptates, accusamus iusto fugiat natus quisquam neque laudantium quaerat maxime sed at atque exercitationem 
+            harum dolore magnam quas sit!
+            </p>
+        </section>
+    </div>
+    <div class="simg1">
+        <span class="section-header"> Section Two</span>
+    </div>
+      
+    <div class="container services-section">
+        <div class="container">
+            <h2 class="services-title">What do we do?</h2>
+            <div class="row rsection">
+                <div class="col-md-4">
+                    <span class="fa fa-cogs" style="font-size:48px"></span>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
+                </div>
+                <div class="col-md-4">
+                    <span class="	fa fa-code" style="font-size:48px"></span>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa fa-bar-chart" style="font-size:48px"></span>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula.</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+      
+    <div class="simg2">
+        <span class="section-header"> Section Three</span>
+    </div>
+      
+    <div class="container-fluid portfolio-section">
+        {% if index_list %}
+            <h2 class="portfolio-title">what have we done?</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    {% for portfolio in index_list %}
+                        <div class="col-md-4 proj-display">
+                            <img src="{{ portfolio.project_cover_pic.url }}" alt="" class="proj-cover-img" style="max-width:100%;">
+                            
+                            <p class="proj-details" style="text-align: right;">
+                                {{ portfolio.project_title }}
+                                <span  class="	fa fa-bookmark-o" style="font-size:10px; padding:10px 0 10px 10px;"> 
+                                {{ portfolio.project_type }}</span>
+                            </p>
+                            <p class="proj-links" style="text-align: right;">
+                            <span><a href="{{ portfolio.project_link }}" class="btn-project" role="button">visit website</a></span>
+                            <span><a href="{% url 'index:detail' portfolio.id %}" class="btn-project" role="button">view details <span class="fa fa-angle-double-right"></span></a></span>
+                            <p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
+            <h3>Sorry. No Projects Currently Available</h3>
+        {% endif %}
+    </div>
+      
+    <div class="simg3">
+        <span class="section-header"> Section Three</span>
+    </div>
+    
+{% endblock %}

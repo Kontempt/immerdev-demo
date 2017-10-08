@@ -1,0 +1,225 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  min-height: 100%;
+}
+h2{
+  text-align: center;
+}
+
+.navbar{
+  background-color: #9E2222;
+  height: 50px;
+  padding: 0;
+  color: white;
+}
+.navbar-brand{
+  padding-left: 60px;
+  font: 20px 'Nova Mono', monospace;
+  color: white;
+}
+.navbar-brand:hover{
+  color: black;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.collapse{
+  font: 13px 'Nova Mono', monospace;
+  background-color: #9E2222;
+  margin-top: 10px;
+  padding: 0px 60px 0 5px;
+  z-index: 50;
+}
+.ml-auto >li{
+  padding: 10px;
+}
+.ml-auto >li >a{
+  color: white;
+}
+/*--JUMBOTRON--*/
+.jumbotron{
+  background-image:  url('images/Jumbotron/pexels-photo-331990.jpeg');
+  background-position: center ;
+  background-attachment: fixed;
+  opacity: 0.65;
+}
+.jumbotron .container{
+  text-align: center;
+}
+.display-3, .jumbotron .container >p{
+  color: white;
+}
+
+/*--JUMBOTRON--*/
+
+/*--ABOUT-US--*/
+.about-us{
+  padding-top: 30px;
+}
+.about-us >p{
+  line-height: 30px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+/*--ABOUT-US--*/
+
+.simg1, .simg2, .simg3{
+  min-height: 250px;
+  background-image: url('images/Jumbotron/pexels-photo2.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  padding-top: 123px;
+  font-size: 25px;
+}
+.simg2{
+  background-image: url('images/Jumbotron/pexels-photo-257928 (1).jpeg');
+  background-position: center top;
+  opacity: 0.5;
+}
+
+.simg3{
+  background-image: url('images/Jumbotron/pexels-photo-270360.jpeg');
+  background-position: center top;
+  min-height: 200px;
+  opacity: 0.8;
+}
+
+/*--SERVICES--*/
+.services-section{
+  background-color: #9E2222;
+  opacity: 0.8;
+  max-width: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  line-height: 30px;
+  color: white;
+  font-size: 14px;
+  
+}
+.rsection .col-md-4 {
+  padding-top: 20px;
+  text-align: center;
+}
+.rsection .col-md-4 >p{
+  padding-top: 10px;
+}
+
+/*--SERVICES--*/
+
+/*--PORTFOLIO--*/
+.portfolio-section{
+  background-color: #292525;
+  max-width: 100%;
+  padding: 30px 0 0 0;
+  color: white;
+  font-size: 14px;
+  /* #292525; */
+}
+.portfolio-section >h2{
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+.proj-display{
+  padding: 5px;
+}
+.proj-display >img {
+  border-radius: 6px;
+}
+.proj-details{
+  margin-bottom: 0;
+}
+.btn-project{
+  background-color: #9E2222;
+  border-radius: 6px;
+  font-size: 12px;
+  color: white;
+  padding: 6px;
+}
+
+.btn-project:hover{
+  color: white;
+  opacity: 0.5;
+}
+
+/*--PORTFOLIO--*/
+
+/*--CONTACT US--*/
+.contact-us-section{
+  
+  max-width: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  color:#9E2222;
+}
+input{
+  border-bottom: 2px solid #9E2222;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 5px;
+}
+textarea{
+  border-bottom: 2px solid #9E2121; 
+  border-left: 0;
+  border-right: 0;
+  border-top: 0; 
+  border-radius: 15px;
+}
+.col-md-6{
+  margin: auto;
+}
+/*--CONTACT US--*/
+
+/* ----------------------------------------------- */
+
+/*--PROJECT--*/
+.project_header{
+  padding: 50px 0px 20px 0px;
+  background-color: #292525;
+  opacity: 0.8;
+  color: white;
+  margin: 50px 0px 20px 0px;
+  
+}
+.project-title{
+  padding-left: 60px;
+}
+.project-details{
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin: 10px 0 20px 0;
+  font-size: 15px;
+}
+.project-desc{
+  line-height: 30px;
+}
+
+/*--PROJECT--*/
+
+/*---------------------------------*/
+footer{
+  background-color:#9E2121;
+  margin-bottom: 0;
+  padding: 20px 0 1px 0px;
+  color: whitesmoke;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+footer .copyright-label{
+  text-align: right;
+  padding-right: 30px;
+  font-size: 10px;
+}
+
+@media (max-width: 768px){
+  .navbar-brand{
+    padding-left: 15px;
+    font-size: 18px;
+  }
+  .ml-auto >li{
+    border-top: 0.5px solid whitesmoke;
+  }
+}

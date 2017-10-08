@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>{% block title%} immerDEV {% endblock %}</title>
+    {% load staticfiles %}
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Nova+Mono|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='{% static "index/dist/css/bootstrap.min.css" %}' rel="stylesheet">
+    <link href='{% static "index/main_immer.css" %}' rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-toggleable-md">
+        <a class="navbar-brand" href="{% url 'index:index' %}">IMMERdev</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#rightnavbar" aria-controls="rightnavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="rightnavbar">
+            <ul class="nav navbar-nav ml-auto">
+                <li><a href="{% url 'index:blog' %}">blog</a></li>
+                <li><a href="#contact-us">contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+
+    <div class="container contact-us-section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin: auto;">
+                    <h3>Contact Us</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, magni!</p>
+                </div>
+                <div class="col-md-8"
+                    <form action="" class="contact-us-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        <input type="text" class="email" name="email" placeholder="*email address">
+                                    </div><br>
+                                    <div>
+                                        <input type="text" class="subject" name="email-subject" placeholder="*subject">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <textarea name="email-message" rows="5" cols=40 placeholder="*message" ></textarea>
+                                    </div>
+                                    <div class="">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <footer>
+        <div class="container footer-details">
+          <div class="row">
+            <div class="col-md-4" style="padding:0;">
+              <p><span class="	fa fa-phone"></span> Tel: 07123987456</p>
+              <p><span class="fa fa-comments"></span> Email: info@immerdev.com</p>
+            </div>
+            <div class="col-md-4">
+              <a href="#"><p> Blog</p></a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright-label">&copy; immerdev 2017</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src={% static "index/assets/js/vendor/jquery.min.js" %}><\/script>')</script>
+    <script src='{% static "index/dist/js/bootstrap.min.js" %}'></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src='{% static "index/assets/js/ie10-viewport-bug-workaround.js" %}'></script>
+  </body>
+</html>

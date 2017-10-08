@@ -1,0 +1,27 @@
+{% extends 'index/index.html' %}
+
+{% load staticfiles %}
+{% block body %}
+{% if blog_list %}
+    <div class="container">
+        <div class="row">
+            {% for blog in blog_list %}
+            <div class="col-md-4">
+                <ul class="blog-details">
+                    <li class="blog-title">{{ blog.blog_title }}</li>
+                    <li class="blog-author">{{ blog.blog_author }}</li>
+                    <li class="pub-time">{{ blog.publish_time }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="container" style="text-align:center;margin-top:50px;">
+        <h3> Oops!</h3>
+        <p> No articles currently available<span style="font-size:10px; color:#9E2222;">...but they're coming</span></p>
+    </div>
+
+{% endif %}
+
+{% endblock %}
